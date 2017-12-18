@@ -1,0 +1,34 @@
+{
+    "name": "Startup/user-domain",
+    "description": "Startup User Domain Microservice",
+    "license": "proprietary",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Marcelino Milanes Lazo",
+            "email": "milanes1988@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Startup\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Startup\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=5.6",
+        "beberlei/assert": "~2.6",
+        "ramsey/uuid": "~3.5",
+        "vocento/request-id": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.6"
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
