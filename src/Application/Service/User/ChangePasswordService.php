@@ -3,13 +3,14 @@
 namespace Startup\Application\Service\User;
 
 use Startup\Application\DataTransformer\User\UserDataTransformerInterface;
+use Startup\Domain\Model\AppUser\User;
 use Startup\Domain\Model\AppUser\UserRepositoryInterface;
+use Startup\Exception\UserNotFoundException;
 
 /**
  * @author Marcelino Milanes Lazo <milanes1988@gmail.com>
  */
-
-class LoginService implements ServiceInterface
+class ChangePasswordService implements ServiceInterface
 {
     /** @var UserRepositoryInterface */
     private $repository;
@@ -18,7 +19,7 @@ class LoginService implements ServiceInterface
     private $transformer;
 
     /**
-     * LoginService constructor.
+     * ChangePasswordService constructor.
      *
      * @param UserRepositoryInterface      $repository
      * @param UserDataTransformerInterface $transformer
@@ -33,25 +34,29 @@ class LoginService implements ServiceInterface
      * @param RequestInterface $request
      *
      * @return array
+     *
+     * @throws \InvalidArgumentException
+     * @throws UserNotFoundException
      */
     public function execute(RequestInterface $request)
     {
-        if (!($request instanceof LoginRequest)) {
+        if (!($request instanceof ChangePasswordRequest)) {
             throw new \InvalidArgumentException('The request is not valid');
         }
 
         $repository = $this->repository();
-        $email = $request->email();
+        $uid = $request->uid();
         $password = $request->password();
-        $target = $request->target();
 
-        $user = $this->repository->ofEmailPasswordAndTarget($email, $password, $target);
+        $user = $repository->ofUidAndPassword($uid, $password);
 
         if (!($user instanceof User)) {
-            throw new UserNotFoundException('User not found for email: '.$email);
+            throw new UserNotFoundException('User not found for uid: '.$uid);
         }
 
-        $user->login($target);
+        $newPassword = $request->newPassword();
+
+        $user->identity()->changePassword($newPassword);
 
         $repository->persist($user);
 

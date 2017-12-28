@@ -1,6 +1,6 @@
 <?php
 
-namespace Vocento\Application\Service\VocUser;
+namespace Vocento\Application\Service\User;
 
 /**
  * @author Marcelino Milanes Lazo <milanes1988@gmail.com>

@@ -56,7 +56,7 @@ class UserDataTransformer implements UserDataTransformerInterface
         return [
             'uid' => $identity->uid(),
             'emails' => $this->getIdentityEmails(),
-            'nickname' => $identity->nickname()
+            'nickname' => $identity->nickname(),
         ];
     }
 
@@ -75,7 +75,6 @@ class UserDataTransformer implements UserDataTransformerInterface
         return \array_map($extractEmailData, $emailList);
     }
 
-
     /**
      * @return array
      */
@@ -93,7 +92,6 @@ class UserDataTransformer implements UserDataTransformerInterface
             'verified' => $status->isVerified(),
         ];
     }
-
 
     /**
      * @return array

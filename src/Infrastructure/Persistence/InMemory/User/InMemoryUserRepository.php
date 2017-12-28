@@ -2,14 +2,13 @@
 
 namespace Startup\Infrastructure\Persistence\InMemory\User;
 
-use Startup\Domain\Model\VocUser\User;
-use Startup\Domain\Model\VocUser\UserId;
-use Startup\Domain\Model\VocUser\User\Email;
-use Startup\Domain\Model\VocUser\User\Identity;
-use Startup\Domain\Model\VocUser\User\Status;
-use Startup\Domain\Model\VocUser\User\ContactData;
-use Startup\Domain\Model\VocUser\User\PersonalData;
-
+use Startup\Domain\Model\AppUser\User;
+use Startup\Domain\Model\AppUser\UserId;
+use Startup\Domain\Model\AppUser\User\Email;
+use Startup\Domain\Model\AppUser\User\Identity;
+use Startup\Domain\Model\AppUser\User\Status;
+use Startup\Domain\Model\AppUser\User\ContactData;
+use Startup\Domain\Model\AppUser\User\PersonalData;
 
 class InMemoryUserRepository implements UserRepositoryInterface
 {
@@ -87,7 +86,6 @@ class InMemoryUserRepository implements UserRepositoryInterface
 
         return null;
     }
-
 
     /**
      * @param string $email

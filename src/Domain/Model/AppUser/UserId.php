@@ -1,6 +1,6 @@
 <?php
 
-namespace Startup\Domain\Model\VocUser;
+namespace Startup\Domain\Model\AppUser;
 
 use Assert\Assertion;
 
@@ -24,6 +24,8 @@ class UserId
 
     /**
      * @param string $id
+     *
+     * @return null
      */
     private function setId($id)
     {

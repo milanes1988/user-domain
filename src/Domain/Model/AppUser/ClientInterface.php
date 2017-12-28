@@ -1,6 +1,6 @@
 <?php
 
-namespace Startup\Domain\Model\VocUser;
+namespace Startup\Domain\Model\AppUser;
 
 use Vocento\RequestId;
 

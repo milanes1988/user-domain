@@ -1,6 +1,6 @@
 <?php
-namespace Startup\Domain\Model\VocUser\User;
 
+namespace Startup\Domain\Model\AppUser\User;
 
 /**
  * @author Marcelino Milanes Lazo <milanes1988@gmail.com>
@@ -19,14 +19,13 @@ class PersonalData
     /** @var string */
     private $secondLastName;
 
-
     /**
      * PersonalData constructor.
      *
-     * @param \DateTimeImmutable|null   $birthDate
-     * @param string                    $firstName
-     * @param string                    $lastName
-     * @param string                    $secondLastName
+     * @param \DateTimeImmutable|null $birthDate
+     * @param string                  $firstName
+     * @param string                  $lastName
+     * @param string                  $secondLastName
      */
     public function __construct(\DateTimeImmutable $birthDate, $firstName, $lastName, $secondLastName)
     {
@@ -36,12 +35,11 @@ class PersonalData
         $this->secondLastName = $secondLastName;
     }
 
-
     /**
-     * @param \DateTimeImmutable|null   $birthDate
-     * @param string                    $firstName
-     * @param string                    $lastName
-     * @param string                    $secondLastName
+     * @param \DateTimeImmutable|null $birthDate
+     * @param string                  $firstName
+     * @param string                  $lastName
+     * @param string                  $secondLastName
      *
      * @return PersonalData
      */

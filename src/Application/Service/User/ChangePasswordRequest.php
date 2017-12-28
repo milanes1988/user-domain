@@ -5,37 +5,37 @@ namespace Startup\Application\Service\User;
 /**
  * @author Marcelino Milanes Lazo <milanes1988@gmail.com>
  */
-class LoginRequest extends RequestInterface
+class ChangePasswordRequest implements RequestInterface
 {
     /** @var string */
-    private $email;
+    private $uid;
 
     /** @var string */
     private $password;
 
     /** @var string */
-    private $target;
+    private $newPassword;
 
     /**
-     * LoginRequest constructor.
+     * ChangePasswordRequest constructor.
      *
-     * @param string $email
+     * @param string $uid
      * @param string $password
-     * @param string $target
+     * @param string $newPassword
      */
-    public function __construct($email, $password, $target = Identity::TARGET_WEB)
+    public function __construct($uid, $password, $newPassword)
     {
-        $this->email = $email;
+        $this->uid = $uid;
         $this->password = $password;
-        $this->target = $target;
+        $this->newPassword = $newPassword;
     }
 
     /**
      * @return string
      */
-    public function email()
+    public function uid()
     {
-        return $this->email;
+        return $this->uid;
     }
 
     /**
@@ -49,8 +49,8 @@ class LoginRequest extends RequestInterface
     /**
      * @return string
      */
-    public function target()
+    public function newPassword()
     {
-        return $this->target;
+        return $this->newPassword;
     }
 }

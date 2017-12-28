@@ -1,5 +1,6 @@
 <?php
-namespace Startup\Domain\Model\VocUser\User;
+
+namespace Startup\Domain\Model\AppUser\User;
 
 /**
  * @author Marcelino Milanes Lazo <milanes1988@gmail.com>
@@ -16,7 +17,6 @@ class ContactData
 
     /** @var string */
     private $phoneMobile;
-
 
     /**
      * @param string $postalCode
@@ -63,7 +63,6 @@ class ContactData
         $this->postalCode = $postalCode;
     }
 
-
     /**
      * @return string
      */
@@ -85,7 +84,6 @@ class ContactData
 
         $this->phone = $phone;
     }
-
 
     /**
      * @return string

@@ -1,17 +1,18 @@
 <?php
-namespace Startup\Domain\Model\VocUser\User;
+
+namespace Startup\Domain\Model\AppUser\User;
 
 /**
  * @author Marcelino Milanes Lazo <milanes1988@gmail.com>
  */
 class Email
 {
-
     /** @var string */
     private $email;
 
     /**
      * Email constructor.
+     *
      * @param string $email
      */
     public function __construct($email)

@@ -2,7 +2,6 @@
 
 namespace Startup\Application\DataTransformer\User;
 
-
 /**
  * @author Marcelino Milanes Lazo <milanes1988@gmail.com>
  */

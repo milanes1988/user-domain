@@ -3,8 +3,8 @@
 namespace Startup\Application\Service\User;
 
 use Startup\Application\DataTransformer\User\UserDataTransformerInterface;
-use Startup\Domain\Model\VocUser\UserRepositoryInterface;
-use Vocento\Application\Service\VocUser\RequestInterface;
+use Startup\Domain\Model\AppUser\UserRepositoryInterface;
+use Startup\Application\Service\User\RequestInterface;
 
 /**
  * @author Marcelino Milanes Lazo <milanes1988@gmail.com>

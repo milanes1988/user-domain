@@ -1,12 +1,11 @@
 <?php
 
-namespace Startup\Domain\Model\VocUser;
+namespace Startup\Domain\Model\AppUser;
 
-use Startup\Domain\Model\VocUser\UserId;
-use Startup\Domain\Model\VocUser\User\Identity;
-use Startup\Domain\Model\VocUser\User\Status;
-use Startup\Domain\Model\VocUser\User\PersonalData;
-use Startup\Domain\Model\VocUser\User\ContactData;
+use Startup\Domain\Model\AppUser\User\Identity;
+use Startup\Domain\Model\AppUser\User\Status;
+use Startup\Domain\Model\AppUser\User\PersonalData;
+use Startup\Domain\Model\AppUser\User\ContactData;
 
 /**
  * @author Marcelino Milanes Lazo <milanes1988@gmail.com>
@@ -49,7 +48,6 @@ class User
         return new self($id, $identity);
     }
 
-
     /**
      * @return UserId
      */
@@ -57,7 +55,6 @@ class User
     {
         return $this->identifier;
     }
-
 
     /**
      * @return Identity
@@ -67,7 +64,6 @@ class User
         return $this->identity;
     }
 
-
     /**
      * @param Identity $identity
      */
@@ -75,7 +71,6 @@ class User
     {
         $this->identity = $identity;
     }
-
 
     /**
      * @return null|Status
@@ -125,7 +120,6 @@ class User
         $this->contactData = $contactData;
     }
 
-
     /**
      * @param string $target
      */
@@ -148,5 +142,4 @@ class User
     {
         $this->changeSession(Session::build());
     }
-
 }

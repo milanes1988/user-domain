@@ -1,5 +1,6 @@
 <?php
-namespace Startup\Domain\Model\VocUser\User;
+
+namespace Startup\Domain\Model\AppUser\User;
 
 use Assert\Assertion;
 
@@ -23,10 +24,10 @@ class Identity
     /**
      * Identity constructor.
      *
-     * @param string  $uid
-     * @param Email   $email
-     * @param string  $password
-     * @param string  $nickname
+     * @param string $uid
+     * @param Email  $email
+     * @param string $password
+     * @param string $nickname
      */
     private function __construct(
         $uid = '',
@@ -34,7 +35,6 @@ class Identity
         $password = '',
         $nickname = ''
     ) {
-
         $this->setUid($uid);
         $this->setEmails($email);
         $this->setPassword($password);
@@ -42,10 +42,10 @@ class Identity
     }
 
     /**
-     * @param string  $uid
+     * @param string $uid
      * @param Email  $email
-     * @param string  $password
-     * @param string  $nickname
+     * @param string $password
+     * @param string $nickname
      *
      * @return Identity
      */
@@ -70,7 +70,6 @@ class Identity
         return new self('', $email, $password);
     }
 
-
     /**
      * @return string
      */
@@ -86,7 +85,6 @@ class Identity
     {
         $this->uid = $uid;
     }
-
 
     /**
      * @return string
@@ -153,5 +151,4 @@ class Identity
     {
         $this->nickname = $nickname;
     }
-
 }
