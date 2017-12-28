@@ -1,5 +1,5 @@
 {
-    "name": "Startup/user-domain",
+    "name": "marcelino/user-domain",
     "description": "Startup User Domain Microservice",
     "license": "proprietary",
     "type": "library",
